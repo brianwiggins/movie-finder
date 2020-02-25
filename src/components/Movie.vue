@@ -1,7 +1,7 @@
 <template>
   <div class="row">
-    <div class="movie col-12">
-      <div class="card">
+    <div class="col-12">
+      <div class="card movie">
         <img :src="movieData.imgUrl" class="card-img-top" @click="setActive" />
         <div class="card-body">
           <h5 class="card-title">{{movieData.title}} - {{movieData.year}}</h5>
@@ -25,5 +25,7 @@ export default {
 <style scoped>
 .movie {
   cursor: zoom-in;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
 }
 </style>
