@@ -1,40 +1,29 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
-import axios from "axios";
+import Vue from "vue";
+import VueRouter from "vue-router";
+import Home from "../views/Home.vue";
 
-let _api = axios.create({
-  baseURL: "https://api.themoviedb.org/3/search/",
-  timeout: 3000
-})
+Vue.use(VueRouter);
 
-Vue.use(Vuex)
-
-export default new Vuex.Store({
-  state: {
-    movies: [],
-    activeMovie: {}
-  },
-  mutations: {
-    setMovies(state, movies) {
-      state.movies = movies
-    },
-    setActiveMovie(state, movie) {
-      state.activeMovie = movie;
-    }
-  },
-  actions: {
-    async getMovies({ commit, dispatch }) {
-      try {
-        let res = await _api.get("movie?api_key=eea60a9096ee464ce6a5f4b0cbd5af37&page=1&query=")
-        commit("setMovies", res.data);
-      } catch (e) {
-        console.error(e);
-      }
-    },
-    setActiveMovie({ commit }, movie) {
-      commit("setActiveMovie", movie)
-    }
+const routes = [
+  {
+    path: "/",
+    name: "Home",
+    component: Home
   }
-})
+  // {
+  //   path: '/about',
+  //   name: 'About',
+  //   // route level code-splitting
+  //   // this generates a separate chunk (about.[hash].js) for this route
+  //   // which is lazy-loaded when the route is visited.
+  //   component: function () {
+  //     return import(/* webpackChunkName: "about" */ '../views/About.vue')
+  //   }
+  // }
+];
 
+const router = new VueRouter({
+  routes
+});
 
+export default router;
