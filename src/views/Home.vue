@@ -1,23 +1,23 @@
 <template>
   <div class="home container-fluid">
-    <div class="row">
-      <div class="col text-center">
+    <div class="row welcome">
+      <div class="col-12 text-center">
         <h1>MovieFinder!</h1>
       </div>
     </div>
     <div class="row">
-      <div class="col">
-        <cars />
+      <div class="col-12">
+        <search />
       </div>
       <div class="col">
         <div class="row">
-          <div class="col">
-            <create-car />
+          <div class="col-4">
+            <movies />
           </div>
         </div>
         <div class="row">
-          <div class="col">
-            <car-details />
+          <div class="col-8">
+            <movie-details />
           </div>
         </div>
       </div>
@@ -30,6 +30,10 @@
   background-image: url("https://images.pexels.com/photos/33129/popcorn-movie-party-entertainment.jpg?auto=compress&cs=tinysrgb&dpr=1&w=500");
   background-size: cover;
   background-repeat: no-repeat;
+}
+.welcome {
+  background-color: black;
+  color: white;
 }
 </style>
 <script>

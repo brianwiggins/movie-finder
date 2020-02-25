@@ -1,6 +1,6 @@
 <template>
   <div class="row">
-    <div class="car col-12">
+    <div class="movie col-12">
       <div class="card">
         <img :src="movieData.imgUrl" class="card-img-top" @click="setActive" />
         <div class="card-body">
@@ -23,7 +23,7 @@ export default {
 };
 </script>
 <style scoped>
-.car {
+.movie {
   cursor: zoom-in;
 }
 </style>
