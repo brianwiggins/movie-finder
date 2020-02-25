@@ -1,18 +1,46 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="home container-fluid">
+    <div class="row">
+      <div class="col text-center">
+        <h1>MovieFinder!</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <cars />
+      </div>
+      <div class="col">
+        <div class="row">
+          <div class="col">
+            <create-car />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <car-details />
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
-
+<style>
+.home {
+  height: 100vh;
+  background-image: url("https://images.pexels.com/photos/33129/popcorn-movie-party-entertainment.jpg?auto=compress&cs=tinysrgb&dpr=1&w=500");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+</style>
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import Movies from "@/components/Movies";
+import MovieDetails from "@/components/MovieDetails";
 
 export default {
-  name: 'Home',
+  name: "Home",
   components: {
-    HelloWorld
+    Movies,
+    MovieDetails
   }
-}
+};
 </script>
