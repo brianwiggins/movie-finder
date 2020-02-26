@@ -23,10 +23,10 @@ export default new Vuex.Store({
     }
   },
   actions: {
-    async getMovies({ commit, dispatch }) {
+    async getMovies({ commit, dispatch }, query) {
       try {
-        let res = await _api.get("movie?api_key=eea60a9096ee464ce6a5f4b0cbd5af37&page=1&query=")
-        commit("setMovies", res.data);
+        let res = await _api.get("movie?api_key=eea60a9096ee464ce6a5f4b0cbd5af37&page=1&query=" + query)
+        commit("setMovies", res.data.results);
       } catch (e) {
         console.error(e);
       }

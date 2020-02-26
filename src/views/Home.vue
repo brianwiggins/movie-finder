@@ -39,10 +39,12 @@
 <script>
 import Movies from "@/components/Movies";
 import MovieDetails from "@/components/MovieDetails";
+import Search from "@/components/Search";
 
 export default {
   name: "Home",
   components: {
+    Search,
     Movies,
     MovieDetails
   }
