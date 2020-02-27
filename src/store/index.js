@@ -19,6 +19,7 @@ export default new Vuex.Store({
       state.movies = movies
     },
     setActiveMovie(state, movie) {
+
       state.activeMovie = movie;
     }
   },

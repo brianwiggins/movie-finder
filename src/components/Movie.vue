@@ -1,10 +1,10 @@
 <template>
-  <div class="row">
-    <div class="col-12">
-      <div class="card movie">
-        <img :src="movieData.imgUrl" class="card-img-top" @click="setActive" />
+  <div class="row mb-2">
+    <div class="col-4">
+      <div class="card movie" @click="setActive" style="width:20rem">
         <div class="card-body">
-          <h5 class="card-title">{{movieData.title}} - {{movieData.year}}</h5>
+          <h5 class="card-title">{{movieData.title}}</h5>
+          <p class="card-text">(Released on: {{movieData.release_date}})</p>
         </div>
       </div>
     </div>
@@ -17,7 +17,7 @@ export default {
   props: ["movieData", "movieIndex"],
   methods: {
     setActive() {
-      this.$store.dispatch("setActiveMovie", this.carData);
+      this.$store.dispatch("setActiveMovie", this.movieData);
     }
   }
 };
